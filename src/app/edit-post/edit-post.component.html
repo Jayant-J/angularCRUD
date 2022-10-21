@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <form (ngSubmit)="onSubmit()" #editForm="ngForm">
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" class="form-control" ngModel name="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="content">Content</label>
+                    <input type="text" id="content" class="form-control" ngModel name="content" required>
+                </div>
+                <div class="row" >
+                    <div class="col-xs-4">
+                        <button class="btn btn-primary" type="submit" [disabled]="!editForm.valid">Update</button>
+                    </div>
+                    <div class="col-xs-6">
+                        <button class="btn btn-default" type="button" (click)="loadOlderValues()">Load Pervious Values</button>
+                    </div>
+                    <div class="col-xs-2">
+                        <button class="btn btn-danger" type="button" (click)="onDeleteItem()">Delete</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
